@@ -1,0 +1,1 @@
+python moresystem/myrun.py 2> 04_errors.txt
