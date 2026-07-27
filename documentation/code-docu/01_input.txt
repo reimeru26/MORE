@@ -1,0 +1,48 @@
+### system ###
+infile = Emden-2010-2014.csv	= power from photovoltaics system / data from PVGIS website for 1 kW system
+carfile = fuel-trak1.txt	= H2 car fueling cycle for one week / kg 
+sizePV = 100.0	= size of PV system in kW
+sizeEL = 50.0	= size of electrolyser in kW
+sizeBA = 50.0	= size of battery in kWh
+sizeCO = 50.0	= size of compressor in kW
+sizeTA = 100.0	= size of hydrogen tank in kg (H2)
+offset = 4.0 = starting day for the year / 2010 starts with Friday = 4 (otherwise set this to zero to start with Monday)
+### operation ###
+elim = 0.2	= % / limit -> only operate electrolyser above this value (20% of max load is reasonable)
+batlim = 0.1	= % / limit for discharge of battery (0.1 = 10%)
+se = 60.0	= kWh / kg H2 -> hydrogen production / efficiency of electrolyser + components = 75%
+hhv = 39.4	= kWh / kg H2 -> hydrogen thermal usage / higher heating value
+### wind ###
+height = 15.0	= hub height in m 
+nompower = 100.0	= nominal power (rated power) in kW (set to 0.0 to disable wind model)
+nomspeed = 12.0	= wind speed for nominal power in m/s
+von = 1.5	= onset wind speed in m/s
+voff = 25.0	= shut down wind speed in m/s
+### heating ###
+area = 200.0	= m2 area for heating 
+heatyear = 0.0 = kWh / m2 ; specific energy demand (see "Energieeffiezienzklasse") - CORAM = 93.0 ("C")
+tlim = 14.0	= °C; limit of outside temp, below heating and above no heating
+tnorm = 20.0	= °C; inside temp
+### CAPEX ###
+pv = 1300.0 / 25.0	= EUR/(kW year) ; PV invest over 15 years
+elyse = 1500.0 / 10.0	= EUR/ (kW year) ; electrolyser invest over 15 years
+bat = 800.0 / 10.0	= EUR/ (kWh year) ; battery  invest over 12 years
+fuelcell = 2000.0 / 10.0	= EUR/ (kW year) ; fuel cell invest over 10 years
+compr = 1500.0 / 10.0	= EUR/ (kW year) ; compressor invest over 10 years
+tank = 500.0 / 25.0	= EUR/(kg year) H2 tank invest over 15 years # 500/ 40 = 12.5 EUR/kWh -> 0.83 per year
+wind = 5000.0 / 25.0	= EUR/ (kW year) 
+### OPEX ###
+pv = 0.02	= % ; percent of CAPEX value (most simple approach, if no other data available)
+elyse = 0.02	= % ; percent of CAPEX value 
+bat = 0.02	= % ; percent of CAPEX value 
+fc = 0.02	= % ; percent of CAPEX value 
+compr = 0.02	=  % ; percent of CAPEX value 
+tank = 0.02	= % ; percent of CAPEX value 
+wind = 0.02	= % ; percent of CAPEX value 
+### environment ###
+ngas = 0.201	= CO2 factor in tons CO2 / MWh natural gas
+oil = 0.288	= CO2 factor in tons CO2 / MWh crude oil
+water = 0.02	= m3/ kgH2 / water consumption for electrolyser
+### data ###
+export = 0	= export results data as separate file *.csv (0 = no / 1 = yes)
+exyear = 0	= exclude first year (or more) from results 
