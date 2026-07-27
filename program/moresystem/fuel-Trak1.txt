@@ -1,0 +1,8 @@
+# day 	kg H2
+Mon	20.0
+Tue	0.0
+Wed	20.0
+Thu	0.0
+Fri	20.0
+Sat	0.0
+Sun	0.0
