@@ -66,8 +66,8 @@ def writeHT(myIn, infile, outfile, a, grid,hyprod,hycon,pv,wi,ext, pvheat, hyhea
     
     mytext = mytext + '<br /><b> Environmental impact per year: </b><br />'
     mytext = mytext + 'Water consumption for electrolysis / m3: &emsp; %.2f <br />' %( myIn['environment'][2] * hyprod )
-    mytext = mytext + 'CO<sub>2</sub> avoided (based on crude oil) / tons: &emsp; %.2f <br />' %( myIn['environment'][1] * (pv + wi) / 1000.0 )
-    mytext = mytext + 'CO<sub>2</sub> avoided (based on natural gas) / tons: &emsp; %.2f <br />' %( myIn['environment'][0] * (pv + wi) / 1000.0 )
+    mytext = mytext + 'CO<sub>2</sub> avoided (based on crude oil) / tons: &emsp; %.2f <br />' %( myIn['environment'][1] * hyprod * myIn['operation'][3] / 1000.0 )
+    mytext = mytext + 'CO<sub>2</sub> avoided (based on natural gas) / tons: &emsp; %.2f <br />' %( myIn['environment'][0] * hyprod * myIn['operation'][3] / 1000.0 )
 
     a = mf.split('####')
     nt = a[0] + mystat + a[1] + mytext + a[2]
